@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Завдання 2 — ExtendedDate</title>
+  <style>body{font:16px/1.5 Arial,sans-serif;max-width:850px;margin:35px auto;padding:0 18px}pre{padding:14px;background:#f3f5f8;white-space:pre-wrap}</style>
+  <script src="js/app.js"></script>
+</head>
+<body>
+  <h1>Завдання 2. Клас ExtendedDate</h1>
+  <pre id="result"></pre>
+  <script>
+    const date = new ExtendedDate();
+    const next = date.nextDate();
+    document.getElementById("result").textContent =
+      "Дата текстом: " + date.toText() + "\\n" +
+      "Дата не минула: " + date.isCurrentOrFuture() + "\\n" +
+      "Рік високосний: " + date.isLeapYear() + "\\n" +
+      "Наступна дата: " + next.toLocaleDateString("uk-UA");
+  </script>
+</body>
+</html>

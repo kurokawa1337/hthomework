@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Завдання 1 — Маркери</title>
+  <style>
+    body{font:16px/1.5 Arial,sans-serif;max-width:850px;margin:35px auto;padding:0 18px}
+    .sample{padding:14px;border:1px solid #ddd;border-radius:8px;margin:12px 0}
+    button{padding:8px 12px;cursor:pointer}
+  </style>
+  <script src="js/app.js"></script>
+</head>
+<body>
+  <h1>Завдання 1. Простий маркер і маркер, що заправляється</h1>
+  <div class="sample">
+    <h2>Друк простим маркером</h2>
+    <div id="simple"></div>
+  </div>
+  <div class="sample">
+    <h2>Друк маркером, що заправляється</h2>
+    <div id="refillable"></div>
+    <button id="refill">Заправити на 30%</button>
+  </div>
+  <script>
+    const marker = new Marker("#1769aa", 8);
+    marker.print("Простий маркер друкує цей текст, доки вистачає чорнил.");
+    document.getElementById("simple").innerHTML = marker.output;
+
+    const refillable = new RefillableMarker("#16803c", 5);
+    refillable.print("До заправки: цей текст буде надруковано частково.");
+    document.getElementById("refillable").innerHTML = refillable.output;
+    document.getElementById("refill").addEventListener("click", () => {
+      refillable.refill(30);
+      refillable.print(" Після заправки маркер може надрукувати більше тексту.");
+      document.getElementById("refillable").innerHTML = refillable.output;
+    });
+  </script>
+</body>
+</html>

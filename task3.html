@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Завдання 3 — EmpTable</title>
+  <style>body{font:16px/1.5 Arial,sans-serif;max-width:950px;margin:35px auto;padding:0 18px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #aaa;padding:8px;text-align:left}th{background:#eee}</style>
+  <script src="js/app.js"></script>
+</head>
+<body>
+  <h1>Завдання 3. Таблиця працівників банку</h1>
+  <div id="table"></div>
+  <script>
+    const employees = [
+      new Employee(1, "Іваненко", "Олена", "Касир", "Відділення №1"),
+      new Employee(2, "Петренко", "Андрій", "Менеджер", "Відділення №2"),
+      new Employee(3, "Ковальчук", "Марія", "Бухгалтер", "Головний офіс"),
+      new Employee(4, "Шевченко", "Олег", "Консультант", "Відділення №1")
+    ];
+    const table = new EmpTable(employees);
+    document.getElementById("table").innerHTML = table.getHtml();
+  </script>
+</body>
+</html>
